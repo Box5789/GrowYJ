@@ -32,7 +32,7 @@ public class CutPlay : MonoBehaviour
     
     void ChangeCut(int Num)
     {
-        CutScene.sprite = ToonImages[Num];
+        CutScene.sprite = Images[Num];
         CutNum++;
     }
 
