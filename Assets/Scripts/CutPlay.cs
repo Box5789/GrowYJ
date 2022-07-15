@@ -16,7 +16,7 @@ public class CutPlay : MonoBehaviour
         Images = Resources.LoadAll<Sprite>("Sprite/Cartoon");
         WholeNum = Images.Length - 1;
         CutNum = 0;
-        InvokeRepeating("ChangeCut", 0, 2);
+        InvokeRepeating("ChangeCut", 4, 2);
         if (CutNum == WholeNum)
         {
             CancelInvoke("ChangeCut");
@@ -38,12 +38,14 @@ public class CutPlay : MonoBehaviour
 
     public void Skip()
     {
+        CancelInvoke("ChangeCut");
         PopUp.SetActive(true);
     }
     
     public void NoSkip()
     {
         PopUp.SetActive(false);
+        InvokeRepeating("ChangeCut", 1, 2);
     }
     
     public void YesSkip()
