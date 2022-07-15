@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class CutPlay : MonoBehaviour
 {
-    public Sprite[] ToonImages;
+    public Sprite[] Images;
     public Image CutScene;
     public GameObject PopUp;
     public GameObject SkipBtn;
@@ -13,8 +13,8 @@ public class CutPlay : MonoBehaviour
 
     void Start()
     {
-        ToonImages = Resources.LoadAll<Sprite>("Sprite/Cartoon");
-        WholeNum = ToonImages.Length - 1;
+        Images = Resources.LoadAll<Sprite>("Sprite/Cartoon");
+        WholeNum = Images.Length - 1;
         CutNum = 0;
         InvokeRepeating("ChangeCut", 0, 2);
         if (CutNum == WholeNum)
