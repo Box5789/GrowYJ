@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 198627643}
   - component: {fileID: 198627642}
   m_Layer: 5
-  m_Name: Study
+  m_Name: "\uACF5\uBD80"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,7 +508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -350, y: 36.111}
+  m_AnchoredPosition: {x: -350, y: 36.110992}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &198627642
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 319109086}
   - component: {fileID: 319109085}
   m_Layer: 5
-  m_Name: Love
+  m_Name: "\uC0AC\uB791"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,7 +628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 27, y: 36.111}
+  m_AnchoredPosition: {x: 27, y: 36.110992}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &319109085
@@ -886,7 +886,7 @@ GameObject:
   - component: {fileID: 795819172}
   - component: {fileID: 795819171}
   m_Layer: 5
-  m_Name: Play
+  m_Name: "\uC5EC\uAC00"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -908,7 +908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -150, y: 36.111}
+  m_AnchoredPosition: {x: -150, y: 36.110992}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &795819171
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 1250013212}
   - component: {fileID: 1250013211}
   m_Layer: 5
-  m_Name: Money
+  m_Name: "\uB3C8"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1028,7 +1028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 203, y: 36.111}
+  m_AnchoredPosition: {x: 203, y: 36.110992}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1250013211
@@ -1122,10 +1122,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1325991217}
-  - component: {fileID: 1325991216}
   - component: {fileID: 1325991218}
+  - component: {fileID: 1325991216}
   m_Layer: 0
-  m_Name: "\uC2A4\uD0EF"
+  m_Name: "\uAD00\uB9AC\uC2DC\uC2A4\uD15C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1140,9 +1140,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1325991215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a262f37b39612c46a07673a2576a887, type: 3}
+  m_Script: {fileID: 11500000, guid: b26bcd3c4c5c6b14d887bc56a0ab9b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "\uACF5\uBD80\uBC84\uD2BC": {fileID: 198627640}
+  "\uC5EC\uAC00\uBC84\uD2BC": {fileID: 795819169}
+  "\uC0AC\uB791\uBC84\uD2BC": {fileID: 319109083}
+  "\uB3C8\uBC84\uD2BC": {fileID: 1250013209}
 --- !u!4 &1325991217
 Transform:
   m_ObjectHideFlags: 0
@@ -1169,10 +1173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d523680137894e741ba796bd240af8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uACF5\uBD80\uBC84\uD2BC": {fileID: 198627640}
-  "\uC5EC\uAC00\uBC84\uD2BC": {fileID: 795819169}
-  "\uC0AC\uB791\uBC84\uD2BC": {fileID: 319109083}
-  "\uB3C8\uBC84\uD2BC": {fileID: 1250013209}
+  "\uC2DC": 0
+  "\uBD84": 0
+  "\uB0A0\uC9DC": 0
   "\uD3EC\uB9CC\uAC10": 0
   "\uD53C\uB85C\uB3C4": 0
   "\uBC30\uD130\uB9AC": 0
