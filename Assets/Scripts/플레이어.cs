@@ -36,9 +36,16 @@ public class 플레이어 : MonoBehaviour
         밥.GetComponent<Button>().onClick.AddListener(delegate { 밥먹기(); });
         잠.GetComponent<Button>().onClick.AddListener(delegate { 잠자기(); });
         배터리오브젝트 = GameObject.FindGameObjectsWithTag("배터리");
-        
+        for (int i = 0; i < 배터리오브젝트.Length; i++)
+            배터리오브젝트[i].SetActive(false);
+
         //영준이 스프라이트 Load
 
+    }
+    private void Start()
+    {
+        for (int i = 0; i < 배터리; i++)
+            배터리오브젝트[i].SetActive(true);
     }
 
     public void 밥먹기()

@@ -25,6 +25,37 @@ public class DataManager : MonoBehaviour
         public int 시;
         public int 분;
         public int 일;
+        
+        public void InitData()
+        {
+            밥카운트 = 0;
+            잠카운트 = 0;
+
+            배터리 = 5;
+            포만감 = 10;
+            피로도 = 10;
+
+            for (int i = 0; i < 스탯.Length; i++)
+                스탯[i] = 50;
+
+            시 = 6;
+            분 = 0;
+            일 = 0;
+        }
+
+        public void SetData()
+        {
+            플레이어 영준이 = GameObject.FindGameObjectWithTag("영준이").GetComponent<플레이어>();
+
+            영준이.밥카운트 = 밥카운트;
+            영준이.잠카운트 = 잠카운트;
+
+            영준이.Set배터리(배터리);
+            영준이.Set포만감(포만감);
+            영준이.Set피로도(피로도);
+
+            영준이.Set스탯(스탯);
+        }
 
         public void SaveData()
         {
@@ -46,20 +77,6 @@ public class DataManager : MonoBehaviour
             분 = m;
             일 = d;
         }
-
-        public void SetData()
-        {
-            플레이어 영준이 = GameObject.FindGameObjectWithTag("영준이").GetComponent<플레이어>();
-
-            영준이.밥카운트 = 밥카운트;
-            영준이.잠카운트 = 잠카운트;
-
-            영준이.Set배터리(배터리);
-            영준이.Set포만감(포만감);
-            영준이.Set피로도(피로도);
-
-            영준이.Set스탯(스탯);
-        }
     }
 
     public GameData _gameData;
@@ -79,11 +96,16 @@ public class DataManager : MonoBehaviour
     private void Awake()
     {
         타임 = GetComponent<시간>();
-    }
-
-    private void Start()
-    {
         스탯불러오기();
+    }
+    public void 스탯초기화()
+    {
+        _gameData.InitData();
+
+        string ToJsonData = JsonUtility.ToJson(gameData);
+        string filePath = Application.persistentDataPath + GameDataFileName;
+
+        File.WriteAllText(filePath, ToJsonData);
     }
 
     public void 스탯불러오기()
@@ -110,12 +132,10 @@ public class DataManager : MonoBehaviour
     public void 스탯저장()
     {
         _gameData.SaveData();
-        _gameData.SaveTime(타임.Get시(), 타임.Get분(), 타임.Get일());
 
         string ToJsonData = JsonUtility.ToJson(gameData);
         string filePath = Application.persistentDataPath + GameDataFileName;
 
         File.WriteAllText(filePath, ToJsonData);
-        Debug.Log("저장 완료");
     }
 }
