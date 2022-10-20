@@ -7,25 +7,28 @@ using System.IO;
 public class 이벤트 : MonoBehaviour
 {
     GameObject[] 이벤트버튼들 = new GameObject[4];
-    GameObject 영준이;
+    플레이어 영준이;
 
     public List<Dictionary<int, EventData>> 데이터 = new List<Dictionary<int, EventData>>();
     public int 클릭버튼;
-    public int 발생이벤트;
+    public int 랜덤값;
 
     enum 버튼{ 공부,여가,사랑, 돈}
 
     private void Awake()
     {
-        영준이 = GameObject.FindGameObjectWithTag("영준이");
+        영준이 = GameObject.FindGameObjectWithTag("영준이").GetComponent<플레이어>();
 
         for (int i=0; i < System.Enum.GetValues(typeof(버튼)).Length; i++)
         {
-            Read(버튼.공부.ToString());
+            //Event DataSet읽어오기
+            Read(((버튼)i).ToString());
+            //이벤트 버튼 찾기
             이벤트버튼들[i] = GameObject.FindGameObjectsWithTag("이벤트버튼")[i+2];
+            //이벤트 버튼에 클릭 함수 추가하기
             int x = i;
             이벤트버튼들[i].GetComponent<Button>().onClick.AddListener(delegate { 
-                if(영준이.GetComponent<플레이어>().Get배터리() > 0) 
+                if(영준이.Get배터리() > 0) //배터리 없으면 이벤트 발생 X
                     이벤트발생(x); 
             });
         }
@@ -90,15 +93,20 @@ public class 이벤트 : MonoBehaviour
     public void 이벤트발생(int num)
     {
         클릭버튼 = num;
-
+        
         //랜덤값 생성 - 추후 확률 조정
-        발생이벤트 = Random.Range(0, 데이터[num].Count);
+        랜덤값 = Random.Range(0, 데이터[num].Count);
+        EventData 발생이벤트 = 데이터[클릭버튼][랜덤값];
 
         //플레이어 스탯 조정
-        영준이.GetComponent<플레이어>().이벤트발생(데이터[클릭버튼][발생이벤트]);
+
+        영준이.이벤트발생(발생이벤트);
 
         //시간 조정
-        GetComponent<시간>().이벤트발생(데이터[클릭버튼][발생이벤트].Get시간());
+        GetComponent<시간>().이벤트발생(발생이벤트.Get시간());
+
+        //스탯 저장
+        GetComponent<DataManager>().스탯저장();
 
         //설명 창 띄우고 대사 등 애니메이션&화면 효과
     }
