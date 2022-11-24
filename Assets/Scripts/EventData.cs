@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventData : MonoBehaviour
-{
-    
+public class EventData 
+{ 
     string 이름;
     string 설명;
     string 대사;
