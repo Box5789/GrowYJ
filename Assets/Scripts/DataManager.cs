@@ -355,7 +355,6 @@ public class DataManager : MonoBehaviour
             _gameData.시간대 = GameData.TL.낮;
             if (!해달 && !배경)
             {
-                
                 if (코루틴 != null)
                     StopCoroutine(코루틴);
                 StartCoroutine(낮으로());

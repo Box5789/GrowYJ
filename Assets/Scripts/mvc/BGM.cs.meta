@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 3e5b67076d01d814e9f9420e2a1a4fb5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - "\uBBF9\uC11C": {fileID: 24100000, guid: 5ef5fa71630ac264e92fce87561dea79, type: 2}
+  - "\uC2AC\uB77C\uC774\uB354": {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
